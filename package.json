@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RafaNetow/changeOfCurrency/issues"
   },
-  "homepage": "https://github.com/RafaNetow/changeOfCurrency#readme"
+  "homepage": "https://github.com/RafaNetow/changeOfCurrency#readme",
+  "dependencies": {
+    "jest": "^22.4.4"
+  }
 }
