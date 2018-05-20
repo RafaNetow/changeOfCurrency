@@ -1,0 +1,19 @@
+{
+  "name": "changeofcurrency",
+  "version": "1.0.0",
+  "description": "this is to API to get change of currency vs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaNetow/changeOfCurrency.git"
+  },
+  "author": "Rafael Sequeiros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaNetow/changeOfCurrency/issues"
+  },
+  "homepage": "https://github.com/RafaNetow/changeOfCurrency#readme"
+}
