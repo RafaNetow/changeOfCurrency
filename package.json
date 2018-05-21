@@ -21,7 +21,10 @@
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
     "jest": "^22.4.4",
-    "lint": "^1.1.2"
+    "lint": "^1.1.2",
+    "lodash": "^4.17.10",
+    "mongoose": "^5.1.1",
+    "request": "^2.86.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1"
