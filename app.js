@@ -12,12 +12,10 @@ CurrrencyRouter.route("/latest/:currencies")
 	.get(function (req,res){
 		const ApiKey = "1c7bac7f6711a3c4247b432cd8acbebb";
 		if(req.params.currencies.indexOf("-") > -1) {
-			console.log(req.params);
 			const currencies = req.params.currencies.split("-");
 			const url = `http://data.fixer.io/api/latest?access_key=${ApiKey}&base=USD&symbols=GBP,JPY,EUR`;
 			res.json({});
-			//To Do call Api to compare currencie
-			// return object
+			
 		}else{
 			const listOfCurrencies = ["GBP","AUD","BRL", "CAD","HNL","DKK","GBP","EUR","USD"].join(",");
 			const currency = req.params.currencies;
@@ -29,12 +27,9 @@ CurrrencyRouter.route("/latest/:currencies")
 				const result = {base : apiResponse.base,
 					date: apiResponse.date,
 					rates: apiResponse.rates};
-				 console.log(apiResponse);
-				 console.log(result);
 				res.json(result);
 			});
-			//To Do call Api to get info of currency
-			//return object
+			
 		}
 	
 	});
