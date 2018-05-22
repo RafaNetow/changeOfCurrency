@@ -26,8 +26,12 @@ CurrrencyRouter.route("/latest/:currencies")
 			request(url,(err,response,body) => {
 				if(err) res.json(err);
 				const apiResponse = JSON.parse(body);
-				const result = {};
-				res.json(apiResponse);
+				const result = {base : apiResponse.base,
+					date: apiResponse.date,
+					rates: apiResponse.rates};
+				 console.log(apiResponse);
+				 console.log(result);
+				res.json(result);
 			});
 			//To Do call Api to get info of currency
 			//return object
