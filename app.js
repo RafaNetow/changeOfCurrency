@@ -21,13 +21,8 @@ CurrrencyRouter.route("/latest/:currencies")
 			request(url,(err,response,body) => {
 				if(err) res.json(err);
 				const queryRate = "rates."+versus;
-				
-			//	console.log("usd"+body.rates.EUR);
-				console.log(JSON.parse(body).rates);
 				const rate =_.get(JSON.parse(body),queryRate);
-				console.log("El body es"+body);
-				const apiResponse = JSON.parse(body);
-				
+				const apiResponse = JSON.parse(body);	
 				const result = {base : apiResponse.base,
 					date: apiResponse.date,
 					versus: versus,
@@ -55,14 +50,6 @@ CurrrencyRouter.route("/latest/:currencies")
 	
 	});
 
-CurrrencyRouter.route("/latest/:base-:versus")
-	.get(function (req,res){
-		let responseJson = {hello: "base and versus response",
-			base: req.params.base,
-			versus: req.params.versus,
-			queryParam: req.query.test};
-		res.json(responseJson);
-	});  
 CurrrencyRouter.route("/historical/:base-:versus")
 	.get(function (req,res){
 		if (req.query.start || req.query.end) {
