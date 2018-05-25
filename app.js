@@ -67,26 +67,20 @@ CurrrencyRouter.route("/historical/:currencies")
 			request(url,(err,response,body) => {
 
 				const apiResponse = JSON.parse(body);
-				const jsonArray = [];
-				const arrayDate =_.toArray(apiResponse);
-				console.log(arrayRates);
 				const arrayRates =	_.toArray(apiResponse.rates);
 				let count = 0;
-				arrayDate.forEach(function (element){
+				let jsonResult = {};
+				_.forEach(apiResponse.rates, function(value, key) {
 					const rateVersus =_.get(arrayRates[count],versus);
-					arrayDate[count] = rateVersus;
-
+					jsonResult[key] = rateVersus;
 					count++;
-					
-				});
-				
-				let result = { base :base,
-							   versus: versus,
-							   start: req.query.start,
-							   end:  req.query.end,
-							   rate: arrayDate
-				};
-			
+				});	
+				let result = { base :base, 
+					versus: versus,
+					start: req.query.start,
+					end:  req.query.end,
+					rate: jsonResult
+				};		
 				res.json(result);
 			});
 			
